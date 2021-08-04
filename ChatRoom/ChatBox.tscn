@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ChatRoom/ChatBox.gd" type="Script" id=1]
+
+[node name="ChatBox" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -1.0
+margin_right = -907.0
+margin_bottom = -522.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+margin_right = 115.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 55.0
+margin_right = 115.0
+margin_bottom = 79.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_top = 5.0
+margin_right = 47.0
+margin_bottom = 19.0
+text = "[Player]"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+margin_left = 51.0
+margin_right = 115.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "enter message"
+placeholder_alpha = 0.527
+
+[connection signal="text_entered" from="VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]

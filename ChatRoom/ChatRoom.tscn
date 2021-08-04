@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ChatRoom/ChatRoom.gd" type="Script" id=1]
+[ext_resource path="res://ChatRoom/ChatBox.tscn" type="PackedScene" id=2]
+
+[node name="ChatRoom" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -212.5
+margin_top = -172.5
+margin_right = 212.5
+margin_bottom = 172.5
+
+[node name="ChatBox" parent="Panel" instance=ExtResource( 2 )]
+margin_left = 5.0
+margin_top = 0.0
+margin_right = -5.0
+margin_bottom = -5.0
+
+[node name="EndRoom" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.0
+margin_top = 193.0
+margin_right = 38.0
+margin_bottom = 213.0
+text = "End Room"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="EndRoom" to="." method="_on_End_Room_pressed"]
