@@ -141,7 +141,7 @@ margin_right = 128.0
 margin_bottom = 429.0
 custom_constants/line_spacing = 6
 text = "If you want non-LAN clients to connect,
-make sure the port 10567 in UDP
+make sure the port 43666 in UDP
 is forwarded on your router."
 align = 1
 
